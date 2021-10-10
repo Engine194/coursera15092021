@@ -1,23 +1,66 @@
 body {
     box-sizing: border-box;
     font-size: 16px;
-    color: #333;
+    color: #000;
     background-color: #fff;
     font-family: "Roboto", sans-serif;
 }
 
 /* Navbar */
-.navbar .container-fluid {
+.navbar>.container-fluid {
     margin-top: -8px;
-    margin-bottom: -8px;
     padding-top: 8px;
     padding-bottom: 8px;
     background-color: #999;
 }
+.navbar>.container-fluid>.navbar-brand {
+    font-size: 1.75em;
+    font-weight: 500;
+}
+.navbar>.container-fluid>.collapse {
+    transition: all linear .15s;
+}
+.navbar-light .navbar-toggler {
+    border-color: #fff;
+    padding: 2px 6px;;
+}
+.navbar-toggler:focus {
+    box-shadow: unset;
+}
+.navbar>.container-fluid>.collapse>ul.navbar-nav {
+    margin-bottom: -10px !important;
+}
+.navbar>.container-fluid>.collapse>ul.navbar-nav>.nav-item {
+    border-bottom: 1px solid #333;
+}
+.navbar>.container-fluid>.collapse>ul.navbar-nav>.nav-item:last-child {
+    border-bottom: none;
+}
+.navbar>.container-fluid>.collapse>ul.navbar-nav>.nav-item>.nav-link {
+    color: #333;
+}
+
+/* Content */
+.page-heading {
+    margin-top: 12px;
+    font-size: 1.75em;
+}
+.section {
+    background-color: #999;
+    margin: 20px 16px 30px;
+    padding-top: 4px;
+}
+.section>.section-title {
+    text-align: center;
+    font-size: 1.25em;
+}
+.section>.section-desc {
+    padding: 0 16px;
+}
 
 /* Mobile */
 
-@media (max-width: 991px) {
+@media (max-width: 575px) {
     .navbar>.container-fluid>.collapse {
         margin-top: 8px;
         margin-left: -12px;
@@ -27,11 +70,29 @@ body {
         margin-bottom: -16px;
         padding-bottom: 8px;
         background-color: #fff;
+        border: 1px solid #333;
+    }
+    .col-xs-8 {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .section>.section-desc {
+        padding: 0 24px;
     }
 }
 
+/* Tablet */
 
-/* Tablet & Desktop */
+@media (min-width: 576px) {
+    ul.navbar-nav {
+        display: none;
+    }
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+}
+
+/* Desktop */
 
 @media (min-width: 992px) {
     ul.navbar-nav {
